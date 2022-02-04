@@ -19,13 +19,13 @@ apt install openssl-tools
 
 It is enough to enter the following command:
 
-```bash
+```
 pip install plr-parser
 ```
 
 or
 
-```bash
+```
 pipenv install plr-parser
 ```
 
@@ -33,7 +33,7 @@ pipenv install plr-parser
 
 Importing the library
 
-```python
+```
 import plr_parser
 ```
 
@@ -41,13 +41,13 @@ import plr_parser
 
 Let's get the data from the player file:
 
-```python
+```
 plr_parser.get_data(file_name: str)
 ```
 
 return data:
 
-```python
+```
 version: uint32
 company: str
 fileType: uint8
@@ -71,21 +71,21 @@ inventory: dict[{'id': int32, 'stack': int32, 'prefix': uint8, 'favorites': bool
 
 For editing, it is enough to get the raw of all values:
 
-```python
+```
 plr_parser.get_bytes_map(file_name: str)
 ```
 
 return data:
 
 ```python
-dict[source_bytes, bytes_map]
+dict[bytes_map, source_bytes]
 ```
 
 ### Save raw bytes to plr file
 
 To get the player's working file, you need to encrypt it again:
 
-```python
+```
 plr_parser.save(file_name: str, raw_bytes: bytes)
 ```
 
